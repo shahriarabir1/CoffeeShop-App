@@ -1,11 +1,19 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { useStore } from "../stores/store";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import EmptyAnimation from "../components/EmptyAnimation";
 import HeaderBar from "../components/HeaderBar";
 import { COLORS } from "../theme/theme";
-const CartScreen = () => {
+import PayFooter2 from "../components/PayFooter2";
+const CartScreen = ({ navigation }) => {
   const CartList = useStore((state) => state.CartList);
   const CartPrice = useStore((state) => state.CartPrice);
   const incrementCartItemQuantity = useStore(
@@ -15,6 +23,10 @@ const CartScreen = () => {
     (state) => state.decrementCartItemQuantity
   );
   const tabbarheight = useBottomTabBarHeight();
+  console.log(CartList);
+  const buttonPressHandler = () => {
+    navigation.push("Payment");
+  };
   return (
     <View style={[styles.screenContainer, { marginBottom: tabbarheight }]}>
       <ScrollView
@@ -27,9 +39,26 @@ const CartScreen = () => {
             {CartList.length == 0 ? (
               <EmptyAnimation title={"The Cart is Empty"} />
             ) : (
-              <></>
+              <View>
+                {CartList.map((item, index) => (
+                  <TouchableOpacity
+                    onPress={() => {}}
+                    key={index}
+                  ></TouchableOpacity>
+                ))}
+              </View>
             )}
           </View>
+          {CartList.length != 0 ? (
+            <PayFooter2
+              buttonTitle="Pay"
+              price={{ price: CartPrice }}
+              title={"Pay"}
+              buttonPressHandler={buttonPressHandler}
+            />
+          ) : (
+            <></>
+          )}
         </View>
       </ScrollView>
     </View>

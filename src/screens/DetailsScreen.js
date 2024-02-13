@@ -13,6 +13,7 @@ import { COLORS } from "../theme/theme";
 import CustomIcon from "../components/CustomIcon";
 import DownerPart from "../components/DownerPart";
 import { useStore } from "../stores/store";
+import PayFooter from "../components/PayFooter";
 const DetailsScreen = (props) => {
   const item = props.route.params.item;
   const itemIndex = useStore((state) =>
@@ -162,71 +163,14 @@ const DetailsScreen = (props) => {
             ))}
           </View>
         </View>
-        <View style={styles.footer}>
-          <View
-            style={{
-              alignItems: "center",
-            }}
-          >
-            <Text
-              style={{
-                color: COLORS.primaryWhiteHex,
-                fontSize: 12,
-              }}
-            >
-              Price
-            </Text>
-            <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
-            >
-              <Text
-                style={{
-                  color: COLORS.primaryOrangeHex,
-                  fontWeight: "bold",
-                  fontSize: 20,
-                }}
-              >
-                $
-              </Text>
-              <Text
-                style={{
-                  color: COLORS.primaryWhiteHex,
-                  fontSize: 20,
-                  fontWeight: "bold",
-                }}
-              >
-                {price.price}
-              </Text>
-            </View>
-          </View>
-          <TouchableOpacity
-            style={{
-              backgroundColor: COLORS.primaryOrangeHex,
-              borderRadius: 15,
-              paddingVertical: 15,
-              paddingHorizontal: 80,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            onPress={() =>
-              handleCart(
-                itemIndex.id,
-                itemIndex.index,
-                itemIndex.name,
-                itemIndex.roasted,
-                itemIndex.imagelink_square,
-                itemIndex.special_ingredient,
-                itemIndex.type,
-                price
-              )
-            }
-          >
-            <Text style={{ color: COLORS.primaryWhiteHex, fontWeight: "bold" }}>
-              Add to Cart
-            </Text>
-          </TouchableOpacity>
-          <Button title="Clear" onPress={clearStorage} />
-        </View>
+        <PayFooter
+          price={price}
+          title={"Add To Cart"}
+          handleCart={handleCart}
+          itemIndex={itemIndex}
+          clearStorage={clearStorage}
+     
+        />
       </ScrollView>
     </View>
   );
@@ -266,12 +210,5 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: COLORS.primaryBlackHex,
-  },
-  footer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 20,
-    paddingTop: 30,
-    alignItems: "center",
   },
 });
