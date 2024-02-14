@@ -40,7 +40,7 @@ const CartScreen = ({ navigation }) => {
             {CartList.length == 0 ? (
               <EmptyAnimation title={"The Cart is Empty"} />
             ) : (
-              <View>
+              <View style={{ flexDirection: "column", gap: 20 }}>
                 {CartList.map((item, index) => (
                   <TouchableOpacity onPress={() => {}} key={index}>
                     <CartItem item={item} />
