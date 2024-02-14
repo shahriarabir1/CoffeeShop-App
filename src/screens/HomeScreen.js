@@ -98,7 +98,6 @@ const HomeScreen = (props) => {
     type,
     prices
   ) => {
-    console.log(prices);
     addToCart({
       id,
       index,

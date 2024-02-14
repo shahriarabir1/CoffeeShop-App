@@ -12,7 +12,8 @@ const App = () => {
   return (
     <NavigationContainer style={styles.container}>
       <StatusBar
-        barStyle="light-content" // Change the text color of the status bar
+        translucent
+        barStyle="light-content" // Change the text color of the status bar to white
         backgroundColor="#0C0F14" // Set your desired status bar color
       />
       <Stack.Navigator

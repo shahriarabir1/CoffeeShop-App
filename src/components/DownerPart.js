@@ -9,7 +9,7 @@ import Milk from "../../assets/drop.png";
 import Location from "../../assets/location.png";
 
 const DownerPart = ({ item }) => {
-  console.log(item);
+
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     backgroundColor: COLORS.primaryBlackRGBA,
-    height: 165,
+    height: 160,
     borderTopStartRadius: BORDERRADIUS.radius_25,
     borderTopEndRadius: BORDERRADIUS.radius_25,
     justifyContent: "space-between",

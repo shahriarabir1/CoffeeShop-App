@@ -159,8 +159,6 @@ const DetailsScreen = (props) => {
           title={"Add To Cart"}
           handleCart={handleCart}
           itemIndex={itemIndex}
-  
-     
         />
       </ScrollView>
     </View>
