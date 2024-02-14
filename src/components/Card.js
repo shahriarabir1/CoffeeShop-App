@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
     right: 0,
     borderBottomLeftRadius: BORDERRADIUS.radius_20,
     borderTopRightRadius: BORDERRADIUS.radius_20,
-    paddingHorizontal: SPACING.space_15,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
   priceText: {
     color: COLORS.primaryOrangeHex,
