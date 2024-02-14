@@ -60,16 +60,16 @@ const Card = (props) => {
           </Text>
           <TouchableOpacity
             onPress={() =>
-              props.handleCart({
-                id: props.item.id,
-                index: props.item.index,
-                name: props.item.name,
-                roasted: props.item.roasted,
-                imagelink_square: props.item.imagelink_square,
-                special_ingredient: props.item.special_ingredient,
-                type: props.item.type,
-                prices: [{ ...props.item.prices[0], quantity: 1 }],
-              })
+              props.handleCart(
+                props.item.id,
+                props.item.index,
+                props.item.name,
+                props.item.roasted,
+                props.item.imagelink_square,
+                props.item.special_ingredient,
+                props.item.type,
+                props.item.prices[0]
+              )
             }
           >
             <BgIcon

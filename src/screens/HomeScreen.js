@@ -98,6 +98,7 @@ const HomeScreen = (props) => {
     type,
     prices
   ) => {
+    console.log(prices);
     addToCart({
       id,
       index,
@@ -106,7 +107,7 @@ const HomeScreen = (props) => {
       imagelink_square,
       special_ingredient,
       type,
-      prices,
+      prices: [{ ...prices, quantity: 1 }],
     });
     calculateCartPrice();
     ToastAndroid.showWithGravity(
