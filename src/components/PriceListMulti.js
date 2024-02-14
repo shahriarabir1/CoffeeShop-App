@@ -3,7 +3,9 @@ import React from "react";
 import { BORDERRADIUS, COLORS, FONTSIZE } from "../theme/theme";
 import CustomIcon from "./CustomIcon";
 
-const PriceListMulti = ({ item }) => {
+
+const PriceListMulti = ({ item, incrementHandler, decrementHandler, id }) => {
+
   return (
     <View style={styles.pricesContainer}>
       <Text style={styles.sizeText}>{item.size}</Text>
@@ -29,7 +31,7 @@ const PriceListMulti = ({ item }) => {
       </View>
       <View style={styles.quantityContainer}>
         <View style={styles.decrement}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => decrementHandler(id, item.size)}>
             <CustomIcon
               name="remove-outline"
               size={15}
@@ -39,7 +41,7 @@ const PriceListMulti = ({ item }) => {
         </View>
         <Text style={styles.priceQuantity}>{item.quantity}</Text>
         <View style={styles.decrement}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => incrementHandler(id, item.size)}>
             <CustomIcon name="add" size={15} color={COLORS.primaryWhiteHex} />
           </TouchableOpacity>
         </View>

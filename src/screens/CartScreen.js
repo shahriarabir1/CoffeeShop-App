@@ -23,10 +23,19 @@ const CartScreen = ({ navigation }) => {
   const decrementCartItemQuantity = useStore(
     (state) => state.decrementCartItemQuantity
   );
+  const calculateCartPrice = useStore((state) => state.calculateCartPrice);
   const tabbarheight = useBottomTabBarHeight();
-  console.log(CartList);
+
   const buttonPressHandler = () => {
     navigation.push("Payment");
+  };
+  const incrementHandler = (id, size) => {
+    incrementCartItemQuantity(id, size);
+    calculateCartPrice();
+  };
+  const decrementHandler = (id, size) => {
+    decrementCartItemQuantity(id, size);
+    calculateCartPrice();
   };
   return (
     <View style={[styles.screenContainer, { marginBottom: tabbarheight }]}>
@@ -43,7 +52,11 @@ const CartScreen = ({ navigation }) => {
               <View style={{ flexDirection: "column", gap: 20 }}>
                 {CartList.map((item, index) => (
                   <TouchableOpacity onPress={() => {}} key={index}>
-                    <CartItem item={item} />
+                    <CartItem
+                      item={item}
+                      incrementHandler={incrementHandler}
+                      decrementHandler={decrementHandler}
+                    />
                   </TouchableOpacity>
                 ))}
               </View>

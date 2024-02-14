@@ -3,7 +3,7 @@ import React from "react";
 import { BORDERRADIUS, COLORS, FONTSIZE } from "../theme/theme";
 import CustomIcon from "./CustomIcon";
 
-const PriceListSingle = ({ item }) => {
+const PriceListSingle = ({ item, id, incrementHandler, decrementHandler }) => {
   return (
     <View style={styles.pricesContainer}>
       <View
@@ -38,7 +38,7 @@ const PriceListSingle = ({ item }) => {
 
       <View style={styles.quantityContainer}>
         <View style={styles.decrement}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => decrementHandler(id, item.size)}>
             <CustomIcon
               name="remove-outline"
               size={15}
@@ -48,7 +48,7 @@ const PriceListSingle = ({ item }) => {
         </View>
         <Text style={styles.priceQuantity}>{item.quantity}</Text>
         <View style={styles.decrement}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => incrementHandler(id, item.size)}>
             <CustomIcon name="add" size={15} color={COLORS.primaryWhiteHex} />
           </TouchableOpacity>
         </View>

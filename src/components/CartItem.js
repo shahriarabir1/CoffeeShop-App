@@ -5,8 +5,8 @@ import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from "../theme/theme";
 import PriceListMulti from "./PriceListMulti";
 import PriceListSingle from "./PriceListSingle";
 
-const CartItem = ({ item }) => {
-  console.log(item);
+const CartItem = ({ item, incrementHandler, decrementHandler }) => {
+  const id = item.id;
   return (
     <View>
       {item.prices.length != 1 ? (
@@ -33,9 +33,14 @@ const CartItem = ({ item }) => {
               </View>
             </View>
           </View>
-          {item.prices.map((item, index) => (
+          {item.prices.map((items, index) => (
             <View>
-              <PriceListMulti item={item} />
+              <PriceListMulti
+                item={items}
+                incrementHandler={incrementHandler}
+                decrementHandler={decrementHandler}
+                id={id}
+              />
             </View>
           ))}
         </LinearGradient>
@@ -58,9 +63,14 @@ const CartItem = ({ item }) => {
                   {item.special_ingredient}
                 </Text>
               </View>
-              {item.prices.map((item, index) => (
+              {item.prices.map((items, index) => (
                 <View>
-                  <PriceListSingle item={item} />
+                  <PriceListSingle
+                    item={items}
+                    incrementHandler={incrementHandler}
+                    decrementHandler={decrementHandler}
+                    id={id}
+                  />
                 </View>
               ))}
             </View>
