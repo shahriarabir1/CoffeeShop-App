@@ -5,9 +5,7 @@ import { COLORS } from "../theme/theme";
 const PayFooter2 = ({
   price,
   title,
-  handleCart,
-  itemIndex,
-  clearStorage,
+
   buttonPressHandler,
 }) => {
   return (
@@ -61,7 +59,7 @@ const PayFooter2 = ({
           {title}
         </Text>
       </TouchableOpacity>
-      <Button title="Clear" onPress={clearStorage} />
+      
     </View>
   );
 };

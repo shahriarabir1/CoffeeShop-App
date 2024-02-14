@@ -25,16 +25,7 @@ const DetailsScreen = (props) => {
   const deleteItem = useStore((state) => state.deleteFromFavoriteList);
   const addToCart = useStore((state) => state.addToCart);
   const calculateCartPrice = useStore((state) => state.calculateCartPrice);
-  const storage = useStore((state) => state.clearStorage);
-  const clearStorage = () => {
-    storage();
-    useStore.setState({
-      CartPrice: 0,
-      FavoritesList: [],
-      CartList: [],
-      OrderHistoryList: [],
-    });
-  };
+
   const backHandler = () => {
     props.navigation.pop();
   };
@@ -168,7 +159,7 @@ const DetailsScreen = (props) => {
           title={"Add To Cart"}
           handleCart={handleCart}
           itemIndex={itemIndex}
-          clearStorage={clearStorage}
+  
      
         />
       </ScrollView>

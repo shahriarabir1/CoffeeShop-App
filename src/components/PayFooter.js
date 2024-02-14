@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import React from "react";
 import { COLORS } from "../theme/theme";
 
-const PayFooter = ({ price, title, handleCart, itemIndex, clearStorage }) => {
+const PayFooter = ({ price, title, handleCart, itemIndex }) => {
   return (
     <View style={styles.footer}>
       <View
@@ -65,7 +65,7 @@ const PayFooter = ({ price, title, handleCart, itemIndex, clearStorage }) => {
           {title}
         </Text>
       </TouchableOpacity>
-      <Button title="Clear" onPress={clearStorage} />
+     
     </View>
   );
 };

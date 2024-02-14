@@ -51,7 +51,12 @@ const CartScreen = ({ navigation }) => {
             ) : (
               <View style={{ flexDirection: "column", gap: 20 }}>
                 {CartList.map((item, index) => (
-                  <TouchableOpacity onPress={() => {}} key={index}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.push("Details", { item: item });
+                    }}
+                    key={index}
+                  >
                     <CartItem
                       item={item}
                       incrementHandler={incrementHandler}
