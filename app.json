@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Omicron Coffee App",
-    "slug": "omicroncoffeeapp",
+    "slug": "omicron-coffee-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/splash.png",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.omicronUniverse"
@@ -25,6 +27,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "42b71a17-035d-4a3f-bbdd-32f4ad015e70"
+      }
+    },
+    "owner": "shahriarabir"
   }
 }
