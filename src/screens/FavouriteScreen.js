@@ -6,7 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StatusBar,
-  Button,
+ 
 } from "react-native";
 import React, { useState } from "react";
 import { COLORS, BORDERRADIUS } from "../theme/theme";
@@ -30,6 +30,7 @@ const FavouriteScreen = (props) => {
 
   return (
     <View style={[styles.container, { marginBottom: tabbarheight }]}>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         extendBody={true}

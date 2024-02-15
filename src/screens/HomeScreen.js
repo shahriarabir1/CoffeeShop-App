@@ -7,6 +7,7 @@ import {
   FlatList,
   Modal,
   ToastAndroid,
+  StatusBar,
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { useStore } from "../stores/store";
@@ -118,6 +119,7 @@ const HomeScreen = (props) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollView}

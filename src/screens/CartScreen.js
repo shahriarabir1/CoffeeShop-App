@@ -3,7 +3,7 @@ import {
   Text,
   View,
   ScrollView,
-  FlatList,
+  StatusBar,
   TouchableOpacity,
 } from "react-native";
 import React from "react";
@@ -39,6 +39,7 @@ const CartScreen = ({ navigation }) => {
   };
   return (
     <View style={[styles.screenContainer, { marginBottom: tabbarheight }]}>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollView}

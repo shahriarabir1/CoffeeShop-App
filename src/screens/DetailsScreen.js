@@ -6,7 +6,6 @@ import {
   ScrollView,
   TouchableOpacity,
   StatusBar,
-  Button,
 } from "react-native";
 import React, { useState } from "react";
 import { COLORS } from "../theme/theme";
@@ -56,6 +55,7 @@ const DetailsScreen = (props) => {
   };
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView showsVerticalScrollIndicator={false} extendBody={true}>
         <ImageBackground
           source={itemIndex.imagelink_portrait}
