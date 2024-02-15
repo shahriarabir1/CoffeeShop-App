@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -7,7 +7,9 @@ import Constants from "expo-constants";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import TabNavigator from "./src/navigators/TabNavigator";
 import PaymentScreen from "./src/screens/PaymentScreen";
+
 const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
     <NavigationContainer style={styles.container}>

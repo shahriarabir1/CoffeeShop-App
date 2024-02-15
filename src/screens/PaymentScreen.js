@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useStore } from "../stores/store";
 import { useState } from "react";
-import PayFooter from "../components/PayFooter";
 import {
   COLORS,
   SPACING,

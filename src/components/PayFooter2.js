@@ -44,7 +44,7 @@ const PayFooter2 = ({ price, title, buttonPressHandler }) => {
           backgroundColor: COLORS.primaryOrangeHex,
           borderRadius: 15,
           paddingVertical: 15,
-          paddingHorizontal: 80,
+          paddingHorizontal: 40,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    gap: 10,
     padding: 20,
     paddingTop: 30,
     alignItems: "center",
