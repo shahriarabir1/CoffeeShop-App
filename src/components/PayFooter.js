@@ -65,7 +65,6 @@ const PayFooter = ({ price, title, handleCart, itemIndex }) => {
           {title}
         </Text>
       </TouchableOpacity>
-     
     </View>
   );
 };

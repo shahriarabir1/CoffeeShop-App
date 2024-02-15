@@ -2,12 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import React from "react";
 import { COLORS } from "../theme/theme";
 
-const PayFooter2 = ({
-  price,
-  title,
-
-  buttonPressHandler,
-}) => {
+const PayFooter2 = ({ price, title, buttonPressHandler }) => {
   return (
     <View style={styles.footer}>
       <View
@@ -59,7 +54,6 @@ const PayFooter2 = ({
           {title}
         </Text>
       </TouchableOpacity>
-      
     </View>
   );
 };

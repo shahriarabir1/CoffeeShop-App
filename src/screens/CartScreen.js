@@ -27,7 +27,7 @@ const CartScreen = ({ navigation }) => {
   const tabbarheight = useBottomTabBarHeight();
 
   const buttonPressHandler = () => {
-    navigation.push("Payment");
+    navigation.push("Payment", { amount: CartPrice });
   };
   const incrementHandler = (id, size) => {
     incrementCartItemQuantity(id, size);
